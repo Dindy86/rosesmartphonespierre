@@ -18,7 +18,7 @@ const ItemListContainer = ({titulo}) => {
     getSmartphonesData().then((data)=>{
       setSmartphones(data);
     })
-  })
+  },[])
 
   return (
     <div>
