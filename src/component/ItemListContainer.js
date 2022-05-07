@@ -21,8 +21,8 @@ const ItemListContainer = ({titulo}) => {
   },[])
 
   return (
-    <div>
-      <h1 className="text-2xl text-red-700 text-center font-semibold m-4">{titulo}</h1>
+    <div className='m-12' >
+      <h1 className=" text-2xl text-red-700 text-center font-semibold m-4">{titulo}</h1>
       <ItemList productos ={smartphones}></ItemList>
     </div>
   )
