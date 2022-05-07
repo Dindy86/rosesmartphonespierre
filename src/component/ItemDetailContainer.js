@@ -2,23 +2,26 @@ import React from 'react'
 import {smartphonesData} from '../data/smartphonesData.js'
 import {useState,useEffect } from 'react';
 import ItemDetail from './ItemDetail.js';
+import { useParams } from 'react-router-dom';
 
-const getSmartphonesData = () => {
+const getSmartphonesData = (idRequested) => {
   return new Promise((resolve, reject) => {
-    setTimeout(()=>{
-      resolve(smartphonesData[0]);
+    setTimeout(() => {
+      const smartphoneRequested = smartphonesData.find(smartphone => smartphone.id === Number(idRequested));
+      resolve(smartphoneRequested);
     },2000)
   })
 }
 
 const  ItemDetailContainer = ({titulo}) => {
   const [smartphoneDetail, setSmartphoneDetail] = useState({});
+  const {id} = useParams();
   
-  useEffect(()=>{
-    getSmartphonesData().then((data)=>{
+  useEffect( () => {
+    getSmartphonesData(id).then((data) => {
       setSmartphoneDetail(data);
     })
-  },[])
+  },[id])
 
   return (
     <div className="text-center m-5">

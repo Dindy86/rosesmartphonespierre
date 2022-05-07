@@ -2,7 +2,7 @@ export const smartphonesData = [
   {
     id:1,
     nombre:"Galaxy S7 edge",
-    marca:"Samgsung",
+    marca:"Samsung",
     descripcion:"Samsung Galaxy S8, Smartphone libre (5.8'', 4GB RAM, 64GB, 12MP) -Versión Alemana: No incluye Samsung Pay ni acceso a promociones Samsung Members-, color gris.",
     precio: 230,
     img:"../assets/images/galaxy7edgeb.jpg"
@@ -10,7 +10,7 @@ export const smartphonesData = [
   {
     id:2,
     nombre:"Galaxy S9 +",
-    marca:"Samgsung",
+    marca:"Samsung",
     descripcion:"SAMSUNG Galaxy S9 64 GB, Single SIM, Android 8.0, Versión Internacional, Bleu Corail (negro) (Reacondicionado)",
     precio: 400,
     img:"../assets/images/galaxy9edge.jpg"
@@ -36,7 +36,7 @@ export const smartphonesData = [
     marca:"Xiaomi",
     descripcion:"Xiaomi Redmi Note 10 Smartphone RAM 4GB ROM 128GB 6.43,  AMOLED DotDisplay 5000mAh (typ) Batería 33W Carga rapida 48MP Wide-Angle Cámara Gris [Versión Española]",
     precio: 800,
-    img:"../assets/images/Xiaomiredmi10a.jpg"
+    img:"../assets/images/Xiaomiredmi10c.jpg"
   },
   { id:6,
     nombre:"Xiaomi Redmi Note 9 Pro",
