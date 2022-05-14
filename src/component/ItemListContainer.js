@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 const getSmartphonesData = (idRequested) => {
   return new Promise((resolve, reject) => {
     setTimeout(()=>{
-      console.log(idRequested);
+      
       if (!idRequested) {
         return resolve(smartphonesData);
       }
@@ -17,7 +17,7 @@ const getSmartphonesData = (idRequested) => {
       });
       
       resolve(dataSmartphones);
-    },2000)
+    }, 2000)
   })
 }
 
