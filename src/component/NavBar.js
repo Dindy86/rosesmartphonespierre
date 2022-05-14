@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
+
 const NavBar = ()=> {
   return(
     <header className="text-gray-600 body-font bg-indigo-800 text-white text-lg">

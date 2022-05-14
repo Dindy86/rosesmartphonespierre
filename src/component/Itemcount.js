@@ -1,8 +1,9 @@
 import React from 'react'
 import {useState} from 'react'
 
-export const Itemcount = ({stock, onAdd}) => {
-  const [count, setCount] = useState(1)
+
+export const Itemcount = ({stock, initialCounter, onAdd}) => {
+  const [count, setCount] = useState(initialCounter)
   const handlerSubstract = () => {
     if(count > 1) {
       setCount(count-1);
