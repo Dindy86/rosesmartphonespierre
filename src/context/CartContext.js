@@ -13,10 +13,10 @@ export const CartContextProvider = ({children}) => {
     return isItemInCart;
   }
   
-  const addItem = (item, cant, id) => {
-    if (isInCart(id)) {
+  const addItem = (item, cant) => {
+    if (isInCart(item.id)) {
       const newCart = cart.map( cartItem => {
-        if (cartItem.id === id) {
+        if (cartItem.id === item.id) {
           const copiedCartItems = {...cartItem};
           copiedCartItems.cant += cant;
           return copiedCartItems;
@@ -40,9 +40,21 @@ export const CartContextProvider = ({children}) => {
   function clear() {
     setCart(() => []);
   }
+
+  function amountItemInCart() {
+    let total = 0;
+    cart.forEach(cartItem => total += cartItem.cant )
+    return total;
+  }
+
+  function totalPriceItems() {
+    let totalPrice = 0;
+    cart.forEach(cartItem => totalPrice += cartItem.cant * cartItem.precio);
+    return totalPrice;
+  }
   
   return (
-    <CartContext.Provider value={{cart, addItem, removeItem, clear}}>
+    <CartContext.Provider value={{cart, addItem, removeItem, clear, amountItemInCart,totalPriceItems}}>
       {children}
     </CartContext.Provider>
   )

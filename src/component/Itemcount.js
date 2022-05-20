@@ -1,7 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
 
-
 export const Itemcount = ({stock, initialCounter, onAdd}) => {
   const [count, setCount] = useState(initialCounter)
   const handlerSubstract = () => {
@@ -14,7 +13,6 @@ export const Itemcount = ({stock, initialCounter, onAdd}) => {
       setCount(count + 1);
     }
   }
-  
   return (
     <div>
       <div>

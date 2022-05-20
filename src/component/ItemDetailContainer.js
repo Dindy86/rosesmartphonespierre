@@ -14,7 +14,7 @@ const getSmartphonesData = (idRequested) => {
 }
 
 const  ItemDetailContainer = ({titulo}) => {
-  const [smartphoneDetail, setSmartphoneDetail] = useState({});
+  const [smartphoneDetail, setSmartphoneDetail] = useState();
   const {id} = useParams();
   
   useEffect( () => {
@@ -22,13 +22,21 @@ const  ItemDetailContainer = ({titulo}) => {
       setSmartphoneDetail(data);
     })
   },[id])
-
-  return (
-    <div className="text-center m-5">
-      <h1 className="text-2xl text-red-700 text-center font-semibold m-4">{titulo}</h1>
-      <ItemDetail smartphoneDetail={smartphoneDetail}/>
-    </div>
-  )
+  
+  if (smartphoneDetail === undefined) {
+    return(
+      <div>
+        <h2>Loading...</h2>
+      </div>
+    )
+  } else {
+    return (
+      <div className="text-center m-5">
+        <h1 className="text-2xl text-red-700 text-center font-semibold m-4">{titulo}</h1>
+        <ItemDetail smartphoneDetail={smartphoneDetail}/>
+      </div>
+    )
+  }
 }
 
 export default ItemDetailContainer;
