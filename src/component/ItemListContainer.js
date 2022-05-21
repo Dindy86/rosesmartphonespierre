@@ -1,34 +1,25 @@
 import React from 'react'
-import {smartphonesData} from '../data/smartphonesData.js'
 import {useState,useEffect } from 'react';
 import ItemList from './ItemList.js';
 import { useParams } from 'react-router-dom';
+import {getAllItems as getSmartphonesData, getItemsByCategory} from '../data'
 
-const getSmartphonesData = (idRequested) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(()=>{
-      
-      if (!idRequested) {
-        return resolve(smartphonesData);
-      }
-      
-      const dataSmartphones = smartphonesData.filter( smartphones => {
-        return smartphones.marca === idRequested
-      });
-      
-      resolve(dataSmartphones);
-    }, 2000)
-  })
-}
 
 const ItemListContainer = ({titulo}) => {
   const {id} = useParams();
   const [smartphones, setSmartphones] = useState([]);
   
   useEffect(()=>{
+  if (id === undefined) {
     getSmartphonesData(id).then((data)=>{
       setSmartphones(data);
     })
+  } else {
+    getItemsByCategory(id).then((data)=>{
+      setSmartphones(data);
+    })
+  }
+
   },[id])
 
   return (

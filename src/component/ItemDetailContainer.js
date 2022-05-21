@@ -1,17 +1,8 @@
 import React from 'react'
-import {smartphonesData} from '../data/smartphonesData.js'
 import {useState,useEffect } from 'react';
 import ItemDetail from './ItemDetail.js';
 import { useParams } from 'react-router-dom';
-
-const getSmartphonesData = (idRequested) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const smartphoneRequested = smartphonesData.find(smartphone => smartphone.id === Number(idRequested));
-      resolve(smartphoneRequested);
-    },2000)
-  })
-}
+import {getItem as getSmartphonesData} from '../data'
 
 const  ItemDetailContainer = ({titulo}) => {
   const [smartphoneDetail, setSmartphoneDetail] = useState();
