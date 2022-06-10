@@ -1,14 +1,15 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore, doc, getDoc, query, where, collection, getDocs} from 'firebase/firestore/lite';
+import {getFirestore, doc, getDoc, query, where, collection, getDocs, addDoc} from 'firebase/firestore/lite';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAmkqaryvRYsKch5vNM-13nbrzp1wi2PkQ",
-  authDomain: "rosesmartphonesreact.firebaseapp.com",
-  projectId: "rosesmartphonesreact",
-  storageBucket: "rosesmartphonesreact.appspot.com",
-  messagingSenderId: "36369019244",
-  appId: "1:36369019244:web:bd33192bf477bb56c70349"
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID
 };
+
 
 const app = initializeApp(firebaseConfig);
 const firestoreDB = getFirestore(app);
@@ -32,4 +33,11 @@ export async function  getItem(id) {
   const smartphonesRef = doc(myCollection, id);
   const smartphonesSnap = await getDoc(smartphonesRef );
   return {id:smartphonesSnap.id, ...smartphonesSnap.data()};
+}
+
+export async function  saveToFirestore(orderDatas) {
+  const orderDatasCollection = collection(firestoreDB, "order");
+  addDoc(orderDatasCollection, orderDatas).then( response => {
+    console.log(response);
+  });
 }

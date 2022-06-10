@@ -34,6 +34,8 @@ export const CartView = () => {
         <div>
           <strong>Precio Total:</strong> {totalPriceItems()}$
         </div>
+
+        <Link to="/OrderForm">Realizar Compra</Link>
       </div>
     )
   }

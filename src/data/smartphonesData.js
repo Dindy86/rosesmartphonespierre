@@ -38,7 +38,7 @@ export const smartphonesData = [
     id:5,
     nombre:"Xiaomi Redmi Note 10",
     marca:"Xiaomi",
-    descripcion:"Xiaomi Redmi Note 10 Smartphone RAM 4GB ROM 128GB 6.43,  AMOLED DotDisplay 5000mAh (typ) Batería 33W Carga rapida 48MP Wide-Angle Cámara Gris [Versión Española]",
+    descripcion:"Xiaomi Redmi Note 10 Smartphone RAM 4GB ROM 128GB 6.43,  AMOLED DotDisplay 5000mAh (typ) Batería 33W Carga rapida 48MP Wide-Angle Cámara Gris",
     precio: 800,
     img:"../assets/images/Xiaomiredmi10c.jpg",
     stock: 20
