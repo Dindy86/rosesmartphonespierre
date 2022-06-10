@@ -10,10 +10,10 @@ const NavBar = ()=> {
           <span className="ml-3 text-white text-lg">RoseSmartphones</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <Link to ="/" className="mr-5 hover:text-gray-900 text-lg">Inicio</Link>
-          <Link to ="marca/Apple" className="mr-5 hover:text-gray-900 text-lg">Apple</Link>
-          <Link to ="marca/Samsung"className="mr-5 hover:text-gray-900 text-lg">Samsung</Link>
-          <Link to ="marca/Xiaomi" className="mr-5 hover:text-gray-900 text-lg">Xiaomi</Link>
+          <Link to ="/" className="mr-5 hover:text-gray-900 text-lg text-white">Inicio</Link>
+          <Link to ="marca/Apple" className="mr-5 hover:text-gray-900 text-lg text-white">Apple</Link>
+          <Link to ="marca/Samsung"className="mr-5 hover:text-gray-900 text-lg text-white">Samsung</Link>
+          <Link to ="marca/Xiaomi" className="mr-5 hover:text-gray-900 text-lg text-white">Xiaomi</Link>
         </nav>
         <CartWidget/>
       </div>
