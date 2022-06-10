@@ -18,6 +18,4 @@ En carrito podemos realizar ciertas acciones como: eliminar item, vacíar el car
 Ejecuta la aplicación en el modo de desarrollo.\
 Abrir [http://localhost:3000](http://localhost:3000) para visualizarla en el navegador.
 
-ir al RoseSmartphones:
- [https://rosesmartphonespierre.vercel.app/](https://rosesmartphonespierre.vercel.app/)
 
