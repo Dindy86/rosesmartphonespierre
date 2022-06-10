@@ -9,14 +9,14 @@ export const CartView = () => {
   if (cart.length === 0) {
     return (
       <div>
-        <Link to ="/">Volver al catálogo</Link>
+        <Link to ="/" className='text-sky-700'>Volver al catálogo</Link>
         <h2>No hay Artículo en el carrito.</h2>
       </div>
     )
   }else {
     return (
       <div>
-        <button onClick={clear}>Vaciar carrito</button>
+        <button className="bg-sky-700 text-white my-4 rounded"  onClick={clear}>Vaciar carrito</button>
         {cart.map(itemCart => <div key={itemCart.id}>
           <div className='flex justify-around '>
             <img className="w-12 h-12" src={itemCart.img} alt={itemCart.nombre}></img>
@@ -31,11 +31,11 @@ export const CartView = () => {
         </div>)
         }
 
-        <div>
+        <div className='mb-3.5'>
           <strong>Precio Total:</strong> {totalPriceItems()}$
         </div>
 
-        <Link to="/OrderForm">Realizar Compra</Link>
+        <Link to="/OrderForm" className="bg-sky-700 text-white my-4 rounded">Realizar Compra</Link>
       </div>
     )
   }

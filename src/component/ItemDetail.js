@@ -20,7 +20,7 @@ export const ItemDetail = ({smartphoneDetail}) => {
         <h2 className='font-bold'>{smartphoneDetail.nombre}</h2>
         <p><strong>Descripción: </strong>{smartphoneDetail.descripcion}</p>
         <p><strong>Precio: </strong>{smartphoneDetail.precio}$</p>
-        {isInCart ? <Link to = "/cart">Ir al carrito</Link>
+        {isInCart ? <Link to = "/cart" className="bg-sky-700 text-white my-4 rounded">Ir al carrito</Link>
                     :<Itemcount onAdd = {onAdd} stock = {smartphoneDetail.stock} initialCounter ={1}></Itemcount> 
         }
       </div>

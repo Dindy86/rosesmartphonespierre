@@ -40,7 +40,7 @@ export default function OrderForm() {
       id:`${item.id}`,
       title:`${item.nombre}`,
       price:`${item.precio}`
-  } ))
+    } ))
     const orderDatas = {
       buyer: buyer,
       items:getItems,
@@ -57,32 +57,32 @@ export default function OrderForm() {
   }
 
   if(isOrderDone) {
-    return <p>Gracias por levantar la orden!</p>
+    return <p>Gracias por comprar!</p>
   } else {
-    return (
-      <div>
-        {
-          <div style={{ display: "flex", flexDirection: "column", justifyContent:"center", alignItems:"center"}}>
-            <div>
-              <h2> Informacion de Compra</h2>
-              <p> <strong>Cantidad de items:</strong> {amountItemInCart()}  <strong>Precio Total:</strong> {totalPriceItems()}$</p>
+      return (
+        <div>
+          {
+            <div style={{ display: "flex", flexDirection: "column", justifyContent:"center", alignItems:"center"}}>
+              <div className="my-5">
+                <h2> Información de Compra</h2>
+                <p> <strong>Cantidad de items:</strong> {amountItemInCart()}  <strong>Precio Total:</strong> {totalPriceItems()}$</p>
+              </div>
+              <div className="border-solid border-2 border-indigo-200 w-96" style={{ display: "flex", flexDirection: "column", justifyContent:"center", alignItems:"center"}}>
+                <h3 className="my-4">Información del buyer</h3>
+                {
+                  Object.keys(buyer).map( key =>{
+                    return (
+                      <div  key ={key} style={{ display: "flex", marginBottom: 15 }}>
+                        <input className="w-72" required placeholder={key? `Digite su ${key}`:""}  style={{borderWidth: "2px", borderStyle: "none", border:"solid 2px gray", borderRadius:"5px"}} name={key} value={buyer[key]} type="text" onChange={evt => onInputChange(evt)} />
+                      </div>
+                    )
+                  })
+                }
+                <button  className="bg-sky-700 text-white my-4 rounded" disabled={validateForm()} onClick={evt => onSubmit(evt)}> Crear orden </button>   
+              </div>
             </div>
-            <div className="border-solid border-2 border-indigo-200 w-96" style={{ display: "flex", flexDirection: "column", justifyContent:"center", alignItems:"center"}}>
-              <h3>Informacion del buyer</h3>
-              {
-                Object.keys(buyer).map( key =>{
-                  return (
-                    <div  key ={key} style={{ display: "flex", marginBottom: 15 }}>
-                      <input className="w-72" required placeholder={key? `Digite su ${key}`:""}  style={{borderWidth: "2px", borderStyle: "none", border:"solid 2px gray", borderRadius:"5px"}} name={key} value={buyer[key]} type="text" onChange={evt => onInputChange(evt)} />
-                    </div>
-                  )
-                })
-              }
-              <button disabled={validateForm()} onClick={evt => onSubmit(evt)}> Crear orden </button>   
-            </div>
-          </div>
-        }          
-      </div>
-    );
+          }          
+        </div>
+      );
   }
 }
