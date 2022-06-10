@@ -8,14 +8,14 @@ const CartWidget = () => {
   if(amountItemInCart()) {
     return (
       <div className='flex justify-center items-center text-white'>
-        <Link to ="/cart"><FaShoppingCart /></Link>
+        <Link to ="/cart" className='text-white'><FaShoppingCart /></Link>
         <div>{amountItemInCart() }</div>
       </div>
     )
   } else {
       return (
-        <div>
-          <Link to ="/cart"><FaShoppingCart /></Link>
+        <div className='text-white'>
+          <Link to ="/cart" className='text-white'><FaShoppingCart /></Link>
         </div>
       )
   }
