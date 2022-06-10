@@ -7,7 +7,7 @@ const CartWidget = () => {
   const {amountItemInCart} = useCartContext();
   if(amountItemInCart()) {
     return (
-      <div className='flex justify-center items-center'>
+      <div className='flex justify-center items-center text-white'>
         <Link to ="/cart"><FaShoppingCart /></Link>
         <div>{amountItemInCart() }</div>
       </div>
